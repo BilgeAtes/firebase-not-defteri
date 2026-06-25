@@ -1,0 +1,12 @@
+# Bağımlılıklar (bu projede gerekmez ama React versiyonu için)
+node_modules/
+
+# Firebase
+.firebase/
+firebase-debug.log
+.firebaserc
+
+# Editör / OS
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /notes/{noteId} {
+      // Sadece giriş yapmış kullanıcı, sadece KENDİ notunu okuyabilir/silebilir/güncelleyebilir.
+      allow read, delete, update: if request.auth != null
+                                  && request.auth.uid == resource.data.userId;
+
+      // Yeni not oluştururken, not'un userId'si giriş yapan kullanıcı olmak zorunda.
+      allow create: if request.auth != null
+                    && request.auth.uid == request.resource.data.userId;
+    }
+  }
+}

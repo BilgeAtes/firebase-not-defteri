@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not Defteri 📒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Oturum durumu netleşene kadar gösterilen yükleniyor ekranı -->
+    <div id="loading" class="screen">
+      <p>Yükleniyor…</p>
+    </div>
+
+    <!-- ====== GİRİŞ / KAYIT EKRANI ====== -->
+    <div id="auth-screen" class="screen hidden">
+      <div class="card">
+        <div class="spiral"></div>
+        <h1>Kişisel Not Defteri</h1>
+
+        <!-- Sekmeler: Giriş / Kayıt -->
+        <div class="tabs">
+          <button id="tab-login" class="tab active">Giriş Yap</button>
+          <button id="tab-register" class="tab">Kayıt Ol</button>
+        </div>
+
+        <!-- GİRİŞ formu -->
+        <form id="login-form" class="form">
+          <input type="email" id="login-email" placeholder="E-posta" required />
+          <input type="password" id="login-password" placeholder="Şifre" required />
+          <button type="submit">Giriş Yap</button>
+          <button type="button" id="forgot-btn" class="link-btn">Şifremi unuttum</button>
+        </form>
+
+        <!-- KAYIT formu -->
+        <form id="register-form" class="form hidden">
+          <input type="email" id="register-email" placeholder="E-posta" required />
+          <input type="password" id="register-password" placeholder="Şifre (en az 6 karakter)" required />
+          <button type="submit">Kayıt Ol</button>
+        </form>
+
+        <div class="divider"><span>veya</span></div>
+        <button id="google-btn" class="google-btn" type="button">
+          Google ile devam et
+        </button>
+
+        <!-- Hata / bilgi mesajları buraya yazılır -->
+        <p id="auth-message" class="message"></p>
+      </div>
+    </div>
+
+    <!-- ====== NOTLAR EKRANI ====== -->
+    <div id="notes-screen" class="screen hidden">
+      <header class="topbar">
+        <span class="brand">📒 Notlarım</span>
+        <div class="topbar-right">
+          <span id="user-email" class="user-email"></span>
+          <button id="logout-btn" class="link-btn">Çıkış Yap</button>
+        </div>
+      </header>
+
+      <!-- E-posta doğrulanmamışsa uyarı bandı (Aşama 4 bonusu) -->
+      <div id="verify-banner" class="banner hidden">
+        E-postan henüz doğrulanmadı.
+        <button id="resend-verify" class="link-btn">Doğrulama mailini tekrar gönder</button>
+      </div>
+
+      <main class="container">
+        <!-- Not ekleme / düzenleme formu -->
+        <form id="note-form" class="note-form">
+          <input type="text" id="note-title" placeholder="Başlık" required />
+          <textarea id="note-content" placeholder="Notun…" rows="3" required></textarea>
+          <div class="note-form-actions">
+            <button type="submit" id="note-submit">Ekle</button>
+            <button type="button" id="note-cancel" class="link-btn hidden">İptal</button>
+          </div>
+        </form>
+
+        <!-- Notların listeleneceği yer -->
+        <div id="notes-list" class="notes-list"></div>
+        <p id="empty-state" class="empty hidden">Henüz notun yok. İlk notunu ekle! ✍️</p>
+      </main>
+    </div>
+
+    <!-- Tüm mantık app.js içinde; modüller import edildiği için type="module" -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
