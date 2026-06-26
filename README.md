@@ -63,13 +63,17 @@ firebase deploy
 
 ## Ekran Görüntüleri
 
-> Buraya 2-3 ekran görüntüsü ekle: giriş, kayıt, notlar.
+### Giriş ekranı
+![Giriş ekranı](docs/login.png)
 
-```
-docs/login.png
-docs/register.png
-docs/notes.png
-```
+### Kayıt ekranı
+![Kayıt ekranı](docs/register.png)
+
+### Notlar ekranı
+![Notlar ekranı](docs/notes.png)
+
+### Not düzenleme
+![Not düzenleme](docs/edit.png)
 
 ---
 
