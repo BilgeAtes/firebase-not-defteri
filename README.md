@@ -4,6 +4,8 @@ Backend yazmadan, tamamen **frontend + Firebase** ile yapılmış küçük bir n
 uygulaması. Kullanıcı kayıt olur, giriş yapar ve **yalnızca kendine ait** notları
 görüp ekleyip düzenleyip silebilir.
 
+🌐 **Canlı demo:** https://firebase-not-defteri.vercel.app/
+
 ## Ne yapıyor?
 
 - E-posta/şifre ile **kayıt** ve **giriş** (Firebase Authentication)
